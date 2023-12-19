@@ -14,11 +14,11 @@ jobs:
         with:
           node-version: 19
       - name: Install packages
-        run: cd frontend && npm ci
+        run: cd imagehive-frontend && npm ci
       - name: Run lint
-        run: cd frontend && npm run lint
+        run: cd imagehive-frontend && npm run check
       - name: Run tests
-        run: cd frontend && npm test
+        run: cd imagehive-frontend && npm run test:unit
 
   backend:
     name: Backend tests
@@ -38,10 +38,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set up JDK 17
+      - name: Set up JDK 21
         uses: actions/setup-java@v1
         with:
-          java-version: 17
+          java-version: 21
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
