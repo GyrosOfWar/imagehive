@@ -1,4 +1,6 @@
-# Imagehive
+<p align="center">
+    <img src="./logo/banner.png" alt="Imagehive" style="margin: 20px 0;">
+</p>
 
 A self-hostable photo gallery. Very early, very work-in-progress and not ready for use yet. Licensed under GPLv3.
 

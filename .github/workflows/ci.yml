@@ -45,7 +45,7 @@ jobs:
         with:
           node-version: 20
       - name: Cache Maven packages
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
@@ -60,6 +60,10 @@ jobs:
         with:
           crate: nu
           locked: true
+      - name: Install ollama
+        run: curl -fsSL https://ollama.com/install.sh | sh
+      - name: Install llava model
+        run: ollama pull llava:7b
       - name: Generate code and build
         run: just generate-client && just backend build
         env:
